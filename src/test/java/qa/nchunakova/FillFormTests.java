@@ -32,7 +32,7 @@ public class FillFormTests {
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
-        $(byText(gender)).click();
+        $("#genterWrapper").$(byText(gender)).click();
         $("#userNumber").setValue(userNumber);
 
         $("#dateOfBirthInput").click();
@@ -41,7 +41,7 @@ public class FillFormTests {
         $(byText("9")).click();
 
         $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
-        $(byText("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Reading")).click();
 
         $("#uploadPicture").uploadFromClasspath("images/gymnocalycium-monvillei-mm814.jpg"); // file to upload from resources
 
