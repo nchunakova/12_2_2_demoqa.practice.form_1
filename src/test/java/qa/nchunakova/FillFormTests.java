@@ -3,6 +3,7 @@ package qa.nchunakova;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
+import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -57,9 +58,11 @@ public class FillFormTests {
         //Assertions block
         $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
                 text(lastName), text(gender), text(userNumber), text("09 July,1992"), text("English"),
-                text("Reading"), text("gymnocalycium-monvillei-mm814.jpg"), text(currentAddress), text("Rajasthan Jaiselmer"));
+                text("Reading"), text("gymnocalycium-monvillei-mm814.jpg"), text(currentAddress),
+                text("Rajasthan Jaiselmer"));
         // todo add more text checks
 
         $("#closeLargeModal").click();
+        $(".modal-content").shouldBe(hidden);
     }
 }
