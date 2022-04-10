@@ -3,6 +3,7 @@ package qa.nchunakova;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -22,6 +23,7 @@ public class FillFormTests {
         String userEmail = "sia@bamberg.com";
         String gender = "Female";
         String userNumber = "0123456789";
+        String currentAddress = "My street 2/1";
 
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
@@ -41,7 +43,22 @@ public class FillFormTests {
         $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
         $(byText("Reading")).click();
 
+        $("#uploadPicture").uploadFromClasspath("images/0.png"); // file to upload from resources
 
-        //$("#submit").click();
+        $("#currentAddress").setValue(currentAddress);
+
+        $("#state").click();
+        $(byText("Rajasthan")).click();
+        $("#city").click();
+        $(byText("Jaiselmer")).click();
+
+        $("#submit").click();
+
+        //Assertion block
+        $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
+                text(lastName), text(gender), text(userNumber), text("09 July,1992"), text("English"),
+                text("Reading"), text("0.png"), text(currentAddress), text("Rajasthan Jaiselmer"));
+
+        $("#closeLargeModal").click();
     }
 }
