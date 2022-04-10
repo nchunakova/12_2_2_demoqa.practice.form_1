@@ -3,6 +3,8 @@ package qa.nchunakova;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -46,6 +48,7 @@ public class FillFormTests {
         $("#hobbiesWrapper").$(byText("Reading")).click();
 
         $("#uploadPicture").uploadFromClasspath("images/gymnocalycium-monvillei-mm814.jpg"); // file to upload from resources
+        //$("#uploadPicture").uploadFile(new File("src/test/resources/images/gymnocalycium-monvillei-mm814.jpg")); // indicate file path from src
 
         $("#currentAddress").setValue(currentAddress);
 
