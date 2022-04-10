@@ -22,6 +22,7 @@ public class FillFormTests {
         String userEmail = "sia@bamberg.com";
         String gender = "Female";
         String userNumber = "0123456789";
+        String currentAddress = "My street 2/1";
 
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
@@ -42,6 +43,17 @@ public class FillFormTests {
         $(byText("Reading")).click();
 
 
-        //$("#submit").click();
+
+        $("#uploadPicture").uploadFromClasspath("images/0.png"); // file to upload from resources
+
+
+        $("#currentAddress").setValue(currentAddress);
+
+        $("#state").click();
+        $(byText("Rajasthan")).click();
+        $("#city").click();
+        $(byText("Jaiselmer")).click();
+
+        $("#submit").click();
     }
 }
