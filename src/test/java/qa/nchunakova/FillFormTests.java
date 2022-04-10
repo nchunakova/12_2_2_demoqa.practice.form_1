@@ -38,8 +38,9 @@ public class FillFormTests {
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
-        $(".react-datepicker__year-select").selectOption("1992");
-        $(byText("9")).click();
+        $(".react-datepicker__year-select").selectOption("2008");
+        $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();
+        // ^ let choose one 30th among two elements, unlike $(byText("30")).click();
 
         $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
         $("#hobbiesWrapper").$(byText("Reading")).click();
@@ -57,7 +58,7 @@ public class FillFormTests {
 
         //Assertions block
         $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
-                text(lastName), text(gender), text(userNumber), text("09 July,1992"), text("English"),
+                text(lastName), text(gender), text(userNumber), text("30 July,2008"), text("English"),
                 text("Reading"), text("gymnocalycium-monvillei-mm814.jpg"), text(currentAddress),
                 text("Rajasthan Jaiselmer"));
         // todo add more text checks
