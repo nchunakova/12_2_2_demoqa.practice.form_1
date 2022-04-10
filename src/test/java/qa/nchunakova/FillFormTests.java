@@ -60,13 +60,17 @@ public class FillFormTests {
         $("#submit").click();
 
         //Assertions block
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
                 text(lastName), text(gender), text(userNumber), text("30 July,2008"), text("English"),
                 text("Reading"), text("gymnocalycium-monvillei-mm814.jpg"), text(currentAddress),
                 text("Rajasthan Jaiselmer"));
         // todo add more text checks
+        //$(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName));
+        //$(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(lastName));
+        //$(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));
 
-        $("#closeLargeModal").click();
-        $(".modal-content").shouldBe(hidden);
+        //$("#closeLargeModal").click();
+        //$(".modal-content").shouldBe(hidden);
     }
 }
