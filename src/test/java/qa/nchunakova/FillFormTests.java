@@ -54,10 +54,11 @@ public class FillFormTests {
 
         $("#submit").click();
 
-        //Assertion block
+        //Assertions block
         $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
                 text(lastName), text(gender), text(userNumber), text("09 July,1992"), text("English"),
                 text("Reading"), text("0.png"), text(currentAddress), text("Rajasthan Jaiselmer"));
+        // todo add more text checks
 
         $("#closeLargeModal").click();
     }
