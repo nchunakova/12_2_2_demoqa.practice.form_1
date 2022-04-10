@@ -42,10 +42,7 @@ public class FillFormTests {
         $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
         $(byText("Reading")).click();
 
-
-
         $("#uploadPicture").uploadFromClasspath("images/0.png"); // file to upload from resources
-
 
         $("#currentAddress").setValue(currentAddress);
 
@@ -55,5 +52,8 @@ public class FillFormTests {
         $(byText("Jaiselmer")).click();
 
         $("#submit").click();
+
+        //Assertion block
+
     }
 }
