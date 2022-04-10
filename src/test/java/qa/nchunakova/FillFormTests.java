@@ -32,7 +32,16 @@ public class FillFormTests {
         $("#userEmail").setValue(userEmail);
         $(byText(gender)).click();
         $("#userNumber").setValue(userNumber);
+
         $("#dateOfBirthInput").click();
-        $("#submit").click();
+        $(".react-datepicker__month-select").selectOption("July");
+        $(".react-datepicker__year-select").selectOption("1992");
+        $(byText("9")).click();
+
+        $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
+        $(byText("Reading")).click();
+
+
+        //$("#submit").click();
     }
 }
