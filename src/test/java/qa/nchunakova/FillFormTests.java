@@ -43,7 +43,7 @@ public class FillFormTests {
         $("#subjectsInput").setValue("E").pressEnter(); // todo edit subjects
         $(byText("Reading")).click();
 
-        $("#uploadPicture").uploadFromClasspath("images/0.png"); // file to upload from resources
+        $("#uploadPicture").uploadFromClasspath("images/gymnocalycium-monvillei-mm814.jpg"); // file to upload from resources
 
         $("#currentAddress").setValue(currentAddress);
 
@@ -57,7 +57,7 @@ public class FillFormTests {
         //Assertions block
         $(".table.table-dark.table-striped.table-bordered.table-hover").shouldHave(text(firstName),
                 text(lastName), text(gender), text(userNumber), text("09 July,1992"), text("English"),
-                text("Reading"), text("0.png"), text(currentAddress), text("Rajasthan Jaiselmer"));
+                text("Reading"), text("gymnocalycium-monvillei-mm814.jpg"), text(currentAddress), text("Rajasthan Jaiselmer"));
         // todo add more text checks
 
         $("#closeLargeModal").click();
