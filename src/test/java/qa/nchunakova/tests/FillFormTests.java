@@ -1,4 +1,4 @@
-package qa.nchunakova;
+package qa.nchunakova.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
@@ -70,7 +70,7 @@ public class FillFormTests {
         //$(".table-responsive").$(byText("Student Email")).parent().shouldHave(text(lastName));
         //$(".table-responsive").$(byText("Gender")).parent().shouldHave(text(gender));
 
-        $("#closeLargeModal").click();
-        $(".modal-content").shouldBe(hidden);
+        //$("#closeLargeModal").click();
+        //$(".modal-content").shouldBe(hidden);
     }
 }
