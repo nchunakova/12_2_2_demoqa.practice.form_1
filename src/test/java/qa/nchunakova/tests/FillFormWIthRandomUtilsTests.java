@@ -1,17 +1,27 @@
 package qa.nchunakova.tests;
 
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.*;
-
-import java.io.File;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.String.format;
+import static qa.nchunakova.utils.RandomUtils.getRandomEmail;
+import static qa.nchunakova.utils.RandomUtils.getRandomString;
 
-public class FillFormTests {
+public class FillFormWIthRandomUtilsTests {
+
+    String firstName = getRandomString(10),
+            lastName = getRandomString(9),
+            userEmail = getRandomEmail(),
+            gender = "Female",
+            userNumber = "0123456789",
+            currentAddress = "My street 2/1";
+
+//    String expectedFullName = format("%s %s", firstName, lastName); // to connect two strings
 
     @BeforeAll
     static void SetUp(){
@@ -22,14 +32,6 @@ public class FillFormTests {
 
     @Test
     void fillFormTest(){
-        String firstName = "Sia";
-        String lastName = "Bamberg";
-        String userEmail = "sia@bamberg.com";
-        String gender = "Female";
-        String userNumber = "0123456789";
-        String currentAddress = "My street 2/1";
-        String expectedFullName = format("%s %s", firstName, lastName); // to connect two strings
-
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
