@@ -1,4 +1,4 @@
-package docs;
+package qa.nchunakova.docs;
 
 import static java.lang.String.format;
 

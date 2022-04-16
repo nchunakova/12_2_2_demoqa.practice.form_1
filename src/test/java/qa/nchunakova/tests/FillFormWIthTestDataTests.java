@@ -1,4 +1,4 @@
-package qa.nchunakova;
+package qa.nchunakova.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
