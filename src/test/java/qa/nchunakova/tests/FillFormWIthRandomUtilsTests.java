@@ -15,7 +15,7 @@ import static qa.nchunakova.utils.RandomUtils.getRandomString;
 public class FillFormWIthRandomUtilsTests {
 
     String firstName = getRandomString(10),
-            lastName = getRandomString(10),
+            lastName = getRandomString(9),
             userEmail = getRandomEmail(),
             gender = "Female",
             userNumber = "0123456789",
