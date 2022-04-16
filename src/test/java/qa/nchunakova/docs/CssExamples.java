@@ -56,6 +56,6 @@ public class CssExamples {
         $x("//div[contains(text(), 'llo every.bo')]"); // part text
         $x("//div[text()[contains(.,'llo every.bo')]]"); // part text var 2
         $(byText("Hello every.body")); // inner Selenide instrument full text
-        $(withText('llo every.bo')); // inner Selenide instrument part text
+        $(withText("llo every.bo")); // inner Selenide instrument part text
     }
 }

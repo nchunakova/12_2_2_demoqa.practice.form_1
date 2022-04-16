@@ -22,7 +22,8 @@ public class FillFormWithPageObjectsTests {
             userNumber = faker.numerify("##########"),
             subject = "English",
             hobbies = "Reading",
-            myPicture = "gymnocalycium-monvillei-mm814.jpg",
+            pictureLocation = "images/gymnocalycium-monvillei-mm814.jpg",
+            expectedPictureName = pictureLocation.substring(7),
             currentAddress = faker.address().fullAddress(),
             state = "Rajasthan",
             city = "Jaiselmer",
@@ -47,7 +48,7 @@ public class FillFormWithPageObjectsTests {
                 .setBirthDate("30", "July", "2008")
                 .setSubjects(subject)
                 .setHobbies(hobbies)
-                .setMyPicture("images/" + myPicture)
+                .setMyPicture(pictureLocation)
                 .setAddress(currentAddress)
                 .setState(state)
                 .setCity(city)
@@ -61,7 +62,7 @@ public class FillFormWithPageObjectsTests {
                 .checkResult("Date of Birth", "30 July,2008")
                 .checkResult("Subjects", subject)
                 .checkResult("Hobbies", hobbies)
-                .checkResult("Picture", myPicture)
+                .checkResult("Picture", expectedPictureName)
                 .checkResult("Address", currentAddress)
                 .checkResult("State and City", expectedFullLocationName)
                 .closePage();
