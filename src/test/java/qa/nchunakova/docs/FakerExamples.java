@@ -16,6 +16,7 @@ public class FakerExamples {
         System.out.println(faker.business().creditCardNumber());
         System.out.println(faker.internet().ipV4Address());
         System.out.println(faker.address().fullAddress());
+        System.out.println(faker.numerify("##########"));
 
         Faker fakerDe = new Faker(new Locale("de"));
         System.out.println(fakerDe.address().fullAddress());
@@ -24,7 +25,7 @@ public class FakerExamples {
         System.out.println(fakerJa.address().fullAddress());
 
         Faker fakerRu = new Faker(new Locale("ru"));
-        System.out.println(fakerRu.address().fullAddress());
+        System.out.println(fakerRu.address().fullAddress()); // doesn't support UTF-8. find out why
 
     }
 }
